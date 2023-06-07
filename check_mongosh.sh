@@ -146,7 +146,7 @@ printOutput() {
 
 main(){
 
-    mongosh_cmd=$(whereis mongosh | cut -d : -f 2 | sed 's/[[:space:]]//g')
+    mongosh_cmd=$(whereis -b mongosh | cut -d : -f 2 | sed 's/[[:space:]]//g')
     if [[  -z $mongosh_cmd ]]; then
         [[  -f /usr/local/bin/mongosh ]] && mongosh_cmd=/usr/local/bin/mongosh;
         [[  -f /usr/bin/mongosh ]] && mongosh_cmd=/usr/bin/mongosh;
